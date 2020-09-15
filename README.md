@@ -1,6 +1,6 @@
 # ip_calculator
 
-This tool is a python script to help you undrestand more things about ip.
+This tool is a python script to help you undrestand more things about ip and specialy helps you if you're interested in network ips or python.
 
 
 Features:
@@ -13,5 +13,5 @@ Features:
 	6.The Binary form of each ip.
 	
 	
-	
+
 	
