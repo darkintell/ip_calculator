@@ -1,4 +1,4 @@
-from IP_Tool import Calculate
+from modules.IP_Tool import Calculate
 
 
 class IP_Calculator:
