@@ -30,7 +30,17 @@ class IP_Calculator:
         
         return is_valid
     
+    #Show Binary Form of IP Address
+    def Showbin(self):
+        bin_ip = [str(bin(int(i)))[2:] for i in self.listed_ip]
+        s=[]
+        for i in range(len(bin_ip)):
+            if len(bin_ip[i])!=8:
+                bin_ip[i] = ((8-len(bin_ip[i]))*'0')+bin_ip[i] 
+                
+        return('.'.join(bin_ip))
+    
 if __name__ == '__main__':
-    test = IP_Calculator('10.22.100.25','21')
-    print(test.Validator())
+    test = IP_Calculator('255.255.255.0','21')
+    print(test.Showbin())
     
