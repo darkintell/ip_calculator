@@ -44,7 +44,7 @@ class IP_Calculator:
     def Show_Hosts(self):
         return 2**(32 - int(self.netmask)) - 2
     
-    #
+    #Show Ip Class
     def IP_Class(self):
         ip_listed = self.listed_ip
         first = int(ip_listed[0])
@@ -59,8 +59,19 @@ class IP_Calculator:
         elif 240 <= first <= 255:
             return 'E'
             
+    #Calculate The Netmask and Wirldcard ip
+    def NetMask_Wildcard(self):
+        netmask = int(self.netmask)
+        bin_ip = (netmask * '1') + ((32 - netmask)*'0')
+        listed_ip = []
+        for i in range(0,32,8):
+            listed_ip.append(str(int(str(bin_ip[i:i+8]),2)))
+            
         
+        wildcard = [str(255 - int(listed_ip[i])) for i in range(0,4)]
+        return(('.'.join(listed_ip)),'.'.join(wildcard))
+    
 if __name__ == '__main__':
-    test = IP_Calculator('0.255.255.0','')
-    print(test.IP_Class())
+    test = IP_Calculator('0.255.255.0','23')
+    print(test.NetMask_Wildcard())
     
