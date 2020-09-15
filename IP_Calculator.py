@@ -1,3 +1,4 @@
+from IP_Tool import Calculate
 
 class IP_Calculator:
     def __init__(self, ip, netmask):
@@ -71,7 +72,25 @@ class IP_Calculator:
         wildcard = [str(255 - int(listed_ip[i])) for i in range(0,4)]
         return(('.'.join(listed_ip)),'.'.join(wildcard))
     
+    
+    #Calculate The network, broadcast, min and max ip 
+    def IP_Details(self):
+        ip_listed =[int(i) for i in self.listed_ip]
+        netmask = int(self.netmask)
+
+        if  0<= netmask <=7:
+            return(Calculate(netmask, ip_listed,1))
+            
+        elif 8<= netmask <= 15:
+            return(Calculate(netmask, ip_listed,2))
+
+        elif 16<= netmask <=23:
+            return(Calculate(netmask, ip_listed,3))
+
+        elif 24 <= netmask <= 31:
+            return(Calculate(netmask, ip_listed,4))
+    
 if __name__ == '__main__':
     test = IP_Calculator('0.255.255.0','23')
-    print(test.NetMask_Wildcard())
+    print(test.IP_Details())
     
