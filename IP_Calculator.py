@@ -1,5 +1,5 @@
 
-class IP_Calculato:
+class IP_Calculator:
     def __init__(self, ip, netmask):
         self.ip = ip
         self.netmask = netmask
@@ -19,7 +19,7 @@ class IP_Calculato:
                 is_valid = True
             else:
                 print("IP is not valid.")
-                is_valid = False
+                return False
         
         if self.netmask.isnumeric() and 0 <= int(self.netmask) <= 32:
             is_valid = True
@@ -27,4 +27,10 @@ class IP_Calculato:
         else:
             print("Netmask range is invalid.(0-32)")
             return False
+        
         return is_valid
+    
+if __name__ == '__main__':
+    test = IP_Calculator('10.22.100.25','21')
+    print(test.Validator())
+    
