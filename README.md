@@ -13,5 +13,6 @@ Features:
 	6.The Binary form of each ip.
 	
 	
-
+Usage:
+	python3 ip_calculator.py
 	
