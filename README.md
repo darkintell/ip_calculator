@@ -1,4 +1,4 @@
-# ip_calculator
+# ip calculator
 
 This tool is a python script to help you undrestand more things about ip and specialy helps you if you're interested in network ips or python.
 
