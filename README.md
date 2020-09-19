@@ -15,5 +15,5 @@ This tool is a python script to help you undrestand more things about ip and spe
 	
 ## Usage:
 
-	`python3 ip_calculator.py`
+`python3 ip_calculator.py`
 	
