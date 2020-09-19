@@ -3,7 +3,7 @@
 This tool is a python script to help you undrestand more things about ip and specialy helps you if you're interested in network ips or python.
 
 
-Features:
+## Features:
 	
 	1.Show the class of ip.
 	2.Show the Netmask and Wildcard ips.
@@ -13,7 +13,7 @@ Features:
 	6.The Binary form of each ip.
 	
 	
-Usage:
+## Usage:
 
 	python3 ip_calculator.py
 	
