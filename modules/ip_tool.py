@@ -1,4 +1,4 @@
-def Ip_Assemble(listed_ip, network, broadcast, min_ip, max_ip, part):
+def ip_assemble(listed_ip, network, broadcast, min_ip, max_ip, part):
     ips =[0,0,0,0]
     if part ==1:
         ips[0] = '.'.join([str(network),'0','0','0']) #Network
@@ -28,7 +28,7 @@ def Ip_Assemble(listed_ip, network, broadcast, min_ip, max_ip, part):
         ips[3] = '.'.join([str(listed_ip[0]), str(listed_ip[1]), str(listed_ip[2]), str(max_ip)])
         return ips
 
-def Calculate(netmask,ip,part):
+def calculate(netmask,ip,part):
     a = int(netmask%8)
     x = 8 - a
     b = 2**x
@@ -46,7 +46,7 @@ def Calculate(netmask,ip,part):
                 broadcast = (i[::-1][0])
                 min_ip = i[1]
                 max_ip = (i[::-1][1])
-                return Ip_Assemble(ip,network, broadcast, min_ip, max_ip, 4)
+                return ip_assemble(ip,network, broadcast, min_ip, max_ip, 4)
             
         elif part ==3:
             if ip[2] in i:
@@ -54,7 +54,7 @@ def Calculate(netmask,ip,part):
                 broadcast = (i[::-1])[0]
                 min_ip = i[0]
                 max_ip = (i[::-1])[0]
-                return Ip_Assemble(ip,network, broadcast, min_ip, max_ip, 3)
+                return ip_assemble(ip,network, broadcast, min_ip, max_ip, 3)
 
                 
         elif part ==2:
@@ -63,7 +63,7 @@ def Calculate(netmask,ip,part):
                 broadcast = (i[::-1])[0]
                 min_ip = i[0]
                 max_ip = (i[::-1])[0]
-                return Ip_Assemble(ip,network, broadcast, min_ip, max_ip, 2)
+                return ip_assemble(ip,network, broadcast, min_ip, max_ip, 2)
                 
         elif part ==1:
             if ip[0] in i:
@@ -71,5 +71,5 @@ def Calculate(netmask,ip,part):
                 broadcast = (i[::-1])[0]
                 min_ip = i[0]
                 max_ip = (i[::-1])[0] 
-                return Ip_Assemble(ip,network, broadcast, min_ip, max_ip, 1)
+                return ip_assemble(ip,network, broadcast, min_ip, max_ip, 1)
             
