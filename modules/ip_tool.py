@@ -1,10 +1,10 @@
 def ip_assemble(listed_ip, network, broadcast, min_ip, max_ip, part):
     ips =[0,0,0,0]
     if part ==1:
-        ips[0] = '.'.join([str(network),'0','0','0']) #Network
-        ips[1] = '.'.join([str(broadcast)+'255','255','255']) #Broadcast
-        ips[2] = '.'.join([str(min_ip)+'0','0','1']) #MIn_ip
-        ips[3] = '.'.join([str(max_ip)+'255','255','254']) #Max_ip
+        ips[0] = '.'.join([str(network), '0','0','0']) #Network
+        ips[1] = '.'.join([str(broadcast), '255','255','255']) #Broadcast
+        ips[2] = '.'.join([str(min_ip), '0','0','1']) #MIn_ip
+        ips[3] = '.'.join([str(max_ip), '255','255','254']) #Max_ip
         return ips
     
     elif part ==2:

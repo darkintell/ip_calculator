@@ -9,28 +9,18 @@ class IpCalculator:
         
     #Validate ip and netmask for correct ranges
     def validation(self):
-        is_valid = False
-        ip_seprated =  self.listed_ip
+        ip_pattern = re.search("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",self.ip)
+        netmask_pattern = re.search("^(?:[0-2][0-9]|[3][0-1]|[0-9])$",self.netmask)
         
-        if self.ip.count('.') !=3:
-            print("IP is not in normal format.")
+        if not ip_pattern:
+            print("IP is not valid.")
+            return False
+          
+        if not netmask_pattern:
+            print("Netmask is not valid.")      
             return False
         
-        for i in ip_seprated:
-            if i.isnumeric() and 0 <= int(i) <=255:
-                is_valid = True
-            else:
-                print("IP is not valid.")
-                return False
-        
-        if self.netmask.isnumeric() and 0 <= int(self.netmask) <= 31:
-            is_valid = True
-        
-        else:
-            print("Netmask range is invalid.(0-31)")
-            return False
-        
-        return is_valid
+        return True
     
     #Show Binary Form of IP Address
     def show_bin(self, ip):
