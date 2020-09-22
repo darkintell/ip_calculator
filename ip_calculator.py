@@ -1,5 +1,6 @@
 from modules.ip_tool import calculate
 import re
+import time
 
 class IpCalculator:
     def __init__(self, ip, netmask):
@@ -100,24 +101,38 @@ def menu():
     
 if __name__ == '__main__':
     menu()
-    ip = input("IP-Address# ")
-    netmask =input("Netmask(0-31)# ")
+    ip = input("ip-address# ")
+    netmask =input("netmask(0-31)# ")
     data = IpCalculator(ip,netmask)
     if data.validation(): 
         print("-"*76)
+        a = 0.1
         print_with_indentation("| Address:", ip,data.show_bin(ip))
+        time.sleep(a)
         print("| Class of IP:",data.ip_class())
+        time.sleep(a)
         print("-"*76)
+        time.sleep(a)
         print_with_indentation("| Netmask:",data.netmask_wildcard()[0],data.show_bin(data.netmask_wildcard()[0]))
+        time.sleep(a)
         print_with_indentation("| Wildcard:",data.netmask_wildcard()[1],data.show_bin(data.netmask_wildcard()[1]))
+        time.sleep(a)
         print("-"*76)
+        time.sleep(a)
         print_with_indentation("| Network:",data.ip_detail()[0],data.show_bin(data.ip_detail()[0]))
+        time.sleep(a)
         print_with_indentation("| Broadcast:",data.ip_detail()[1],data.show_bin(data.ip_detail()[1]))
+        time.sleep(a)
         print("-"*76)
+        time.sleep(a)
         print_with_indentation("| Host Min:",data.ip_detail()[2],data.show_bin(data.ip_detail()[2]))
+        time.sleep(a)
         print_with_indentation("| Host Max:",data.ip_detail()[3],data.show_bin(data.ip_detail()[3]))
+        time.sleep(a)
         print("| Hosts: ",data.show_hosts())
+        time.sleep(a)
         print("-"*76)
+    
     
     
     
